@@ -44,6 +44,8 @@ public class PlayerCollision : MonoBehaviour {
             //DAMAGE
             playerData.Damage(other.gameObject.GetComponent<CementeryData>().DamagePoints);
             Debug.Log("VIDA LUEGO DEL DAÑO: " + playerData.HP);
+
+            HUDManager.SetHPBar(playerData.HP);
         }
 
         if (other.gameObject.tag == "enemy"){
@@ -55,6 +57,8 @@ public class PlayerCollision : MonoBehaviour {
                 
                 playerData.Damage(500);
                 Debug.Log("VIDA LUEGO DEL DAÑO: " + playerData.HP);
+
+                HUDManager.SetHPBar(playerData.HP);
             }
         }
     }
@@ -74,6 +78,8 @@ public class PlayerCollision : MonoBehaviour {
             playerData.Healing(foodData.HealPoints);
             Debug.Log("VIDA LUEGO DE COMER: " + playerData.HP);
 
+            HUDManager.SetHPBar(playerData.HP);
+            
             GameManager.Score += 30;
             Debug.Log("SCORE: " + GameManager.Score);
 
