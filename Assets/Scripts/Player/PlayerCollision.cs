@@ -81,6 +81,8 @@ public class PlayerCollision : MonoBehaviour {
             HUDManager.SetHPBar(playerData.HP);
             
             GameManager.Score += 30;
+            HUDManager.SetScoreBar(GameManager.Score);
+            
             Debug.Log("SCORE: " + GameManager.Score);
 
             if (GameManager.Timer <= 20f && GameManager.Score <= 50){

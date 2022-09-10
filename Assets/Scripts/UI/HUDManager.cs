@@ -10,6 +10,7 @@ public class HUDManager : MonoBehaviour {
 
     [SerializeField] private Slider hpBar;
 
+    [SerializeField] private Slider scoreBar;
     private PlayerData playerData;
 
     private void Start() {
@@ -31,4 +32,10 @@ public class HUDManager : MonoBehaviour {
 
         instance.hpBar.value = newValue;
     }
+
+    public static void SetScoreBar(int newValue){
+
+        instance.scoreBar.value = newValue;
+    }
+
 }
